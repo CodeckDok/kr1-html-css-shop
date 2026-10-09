@@ -69,6 +69,15 @@ header { background-color: var(--color-surface);}
 
 footer { background-color: rgb(242, 242, 242, 0.7); }
 
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
 
 /* ===============================
    3. Общие элементы интерфейса
@@ -138,6 +147,7 @@ a:focus-visible {
   border: 1px solid var(--color3);
   border-radius: 8px;
   background:url('../Image/Group\ 22.png') no-repeat;
+  background-size: 100% 100%;
 
   /* НОВЫЕ СВОЙСТВА: Делаем карточку сеткой */
   display: grid;
@@ -240,6 +250,22 @@ h1, h2, h3 {
   display: inline-block; /* Чтобы фон занимал только ширину текста, а не всю строку */
 }
 
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
 /* ===============================
    5. Форма и модальное окно
    =============================== */
@@ -250,6 +276,7 @@ h1, h2, h3 {
   border: none;
   border-radius: var(--radius-lg);
   background: url("../Image/Group\ 23.png") no-repeat center;
+  background-size: 100% 100%;
 }
 
 .order-dialog::backdrop {
